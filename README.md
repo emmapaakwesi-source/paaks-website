@@ -19,12 +19,16 @@ Visit http://localhost:3000. Run `npm run build` to build and type-check. The bu
 - Mobile navigation and keyboard-accessible dialogs.
 - WhatsApp enquiry form: prepares a message; customers send it in WhatsApp. Orders require team confirmation.
 - Original design image retained, with extracted reference artwork used throughout the homepage.
+- City selector with an opt-in interactive Google map and external map links. Maps show city centres; the factory address is not supplied.
+- Product enquiry buttons preselect the item; service and corporate enquiries select bulk supply.
+- Water insight cards open short information dialogs.
+- Fluid cards, larger control targets, explicit image dimensions, lazy image loading and a keyboard skip link.
 - Layout, colours, typography and section proportions revised to follow the supplied design.
 
 ## Before a public launch
 
 Confirm the telephone/WhatsApp number inherited from the reference: `0244 025 199`. It currently appears in `src/app/page.tsx` and `src/app/order-dialog.tsx`.
-Reference artwork has been extracted from the supplied design; replace it with original high-resolution assets when available. Supply the brand video, approved laboratory reports, verified testimonials, and finished articles. Confirm delivery coverage; expansion locations are enquiries only. Bottled products remain coming soon. No payment processing or backend order storage is implemented.
+Reference artwork has been extracted from the supplied design; replace it with original high-resolution assets when available. Supply the brand video, approved laboratory reports and verified testimonials. Short water information notes are included; replace or expand them with approved company articles. Institution logos are removed until approved. Confirm delivery coverage; expansion locations are enquiries only. Bottled products remain coming soon. No payment processing or backend order storage is implemented.
 
 ## GitHub
 
