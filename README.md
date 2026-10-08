@@ -1,43 +1,40 @@
-# PAAKS Purified Water
+# PAAKS Purified Water website
 
-Responsive Next.js website developed from `public/design-reference.jpg`.
+A responsive Next.js static website for PAAKS, based in Tamale. The homepage follows a clear brand and enquiry journey, with dedicated product, quality, delivery, corporate, distributor, FAQ and contact pages.
 
-## Development
+## Run locally
 
 Requires Node.js 20 or newer.
 
 ```bash
 npm ci
 npm run dev
+npm run build
 ```
 
-Visit http://localhost:3000. Run `npm run build` to build and type-check. The build exports a static website to `out/` for hosting. `npm run start` is not used for static exports; serve `out/` with a static host.
+The build exports to `out/`; deploy that directory to a static host. `npm run start` is not used for static exports.
 
-## Included
+## Pages and functionality
 
-- Responsive homepage, products, services, quality, service areas and resources.
-- Mobile navigation and keyboard-accessible dialogs.
-- WhatsApp enquiry form: prepares a message; customers send it in WhatsApp. Orders require team confirmation.
-- Original design image retained, with extracted reference artwork used throughout the homepage.
-- City selector with an opt-in interactive Google map and external map links. Maps show city centres; the factory address is not supplied.
-- Product enquiry buttons preselect the item; service and corporate enquiries select bulk supply.
-- Water insight cards open short information dialogs.
-- Fluid cards, larger control targets, explicit image dimensions, lazy image loading and a keyboard skip link.
-- Layout, colours, typography and section proportions revised to follow the supplied design.
+- `/`: spacious homepage with product imagery, purification overview, service journeys, story, city map, FAQs and distributor invitation.
+- `/products`, `/products/sachet`, `/products/dispenser`: product details and contextual enquiry buttons. Bottled products remain planned.
+- `/quality`: treatment process and a request for available reports.
+- `/delivery`: delivery enquiries, city map and dispenser services.
+- `/corporate`: workplace and event quotes.
+- `/distributors`: partnership enquiries.
+- `/about`, `/faq`, `/contact`: company information and help.
+- Shared WhatsApp enquiry dialog preselects the enquiry type. Corporate quotes collect business, date and frequency; distributor enquiries collect business details. Messages are sent only when customers send them in WhatsApp. There is no backend storage or payment processing.
+- City map loads Google Maps only when requested. It shows city locations, not the factory address. Expansion locations do not imply confirmed delivery coverage.
+- Responsive navigation, native accessible dialogs, keyboard skip link, FAQ disclosures, explicit image dimensions and lazy loading.
 
-## Before a public launch
+## Brand assets
 
-Confirm the telephone/WhatsApp number inherited from the reference: `0244 025 199`. It currently appears in `src/app/page.tsx` and `src/app/order-dialog.tsx`.
-Reference artwork has been extracted from the supplied design; replace it with original high-resolution assets when available. Supply the brand video, approved laboratory reports and verified testimonials. Short water information notes are included; replace or expand them with approved company articles. Institution logos are removed until approved. Confirm delivery coverage; expansion locations are enquiries only. Bottled products remain coming soon. No payment processing or backend order storage is implemented.
+The official user-approved logo is preserved unchanged in `public/brand/paaks-official-logo.jpeg`; the header uses a display crop of that same artwork. Generated product mockups and their prompt briefs are in `public/imagery/`. They are labelled illustrative in the site. Replace them with real product photography later. The original design reference and older reference assets are retained for history.
 
-## GitHub
+## Before public launch
 
-Source repository: https://github.com/emmapaakwesi-source/paaks-website. No credentials belong in this repository.
+Confirm the phone/WhatsApp number inherited from the design: `0244 025 199`, currently used in `site-content.tsx` and `order-dialog.tsx`. Supply factory coordinates, business email, opening hours, approved laboratory reports and verified testimonials. Confirm quantities per sachet bag, current pricing, bottle/exchange requirements, delivery terms and product packaging. Supply real photos and any brand video. The public domain and Squarespace DNS have not been connected.
 
-## Deployment
+Source repository: https://github.com/emmapaakwesi-source/paaks-website
 
-`next.config.ts` enables static export. `.openai/hosting.json` records the private Sites preview. A future public deployment and Squarespace DNS connection require the actual domain and hosting choice. Domain settings have not been changed.
-
-## Official brand logo
-
-The user-approved official PAAKS logo is preserved unchanged in `public/brand/paaks-official-logo.jpeg`. The website uses `paaks-official-logo.webp`, a display crop of the same artwork with outer white margins removed. Use this approved blue/red wave and droplet logo for future PAAKS branding. The logo embedded in reference photographs is illustrative.
+`.openai/hosting.json` retains the existing private Sites project identity. Keep credentials outside the repository.
