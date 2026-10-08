@@ -33,3 +33,7 @@ Source repository: https://github.com/emmapaakwesi-source/paaks-website. No cred
 ## Deployment
 
 `next.config.ts` enables static export. `.openai/hosting.json` records the private Sites preview. A future public deployment and Squarespace DNS connection require the actual domain and hosting choice. Domain settings have not been changed.
+
+## Official brand logo
+
+The user-approved official PAAKS logo is preserved unchanged in `public/brand/paaks-official-logo.jpeg`. The website uses `paaks-official-logo.webp`, a display crop of the same artwork with outer white margins removed. Use this approved blue/red wave and droplet logo for future PAAKS branding. The logo embedded in reference photographs is illustrative.
