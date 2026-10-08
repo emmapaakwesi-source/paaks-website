@@ -7,3 +7,8 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}@media(prefers-reduced-motion:no-preference){a,button{transition:background-color .15s,color .15s,box-shadow .15s}.product-image img{transition:transform .3s}.product-image:hover img{transform:scale(1.025)}}
 
 .form-row.single{grid-template-columns:1fr}
+
+/* Company information and four-service layout. */
+.service-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.service-card{padding:25px}.main-nav{gap:20px}.values-grid>div{align-items:flex-start}.values-grid svg{flex-shrink:0}.values-grid p{font-size:13px;line-height:1.65;margin:10px 0 0;font-weight:400}.values-title{margin-top:50px}.values-grid{margin-top:25px}.company-photo{margin:50px 0 0}.company-photo img{width:100%;height:auto;border-radius:18px}.company-photo figcaption{font-size:12px;color:var(--muted);margin-top:12px;line-height:1.7}.contact-number{margin:20px 0}.contact-email{display:block;overflow-wrap:anywhere;color:var(--blue);line-height:1.7}.footer-grid a{overflow-wrap:anywhere}.enquiry-fallback{margin-top:24px;padding-top:20px;border-top:1px solid var(--line)}.enquiry-fallback .btn{margin:0 8px 15px 0}.enquiry-fallback label{display:grid;gap:8px;font-size:12px}.form-row.single{grid-template-columns:1fr}.tinted{background:radial-gradient(ellipse at 10% 0%,#d9f4ff,transparent 65%),#edf5fc}
+@media(max-width:1100px){.main-nav{gap:13px}.service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.service-grid,.values-grid{grid-template-columns:1fr}.company-photo{margin-top:32px}.contact-number{font-size:24px}.enquiry-fallback .btn{width:100%;margin-right:0}.order-dialog input,.order-dialog select,.order-dialog textarea{font-size:16px}}

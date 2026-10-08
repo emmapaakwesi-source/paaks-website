@@ -5,9 +5,12 @@ import { X, MessageCircle } from 'lucide-react';
 type Props = { open: boolean; onClose: () => void; notice?: string; initialProduct?: string };
 export default function OrderDialog({ open, onClose, notice, initialProduct }: Props) {
   const titleId = useId();
+  const form = useRef<HTMLFormElement>(null);
+  const [prepared, setPrepared] = useState('');
+  const [copyStatus, setCopyStatus] = useState('');
   const dialog = useRef<HTMLDialogElement>(null);
   const [product, setProduct] = useState('19L dispenser refill');
-  useEffect(() => { if (open && !notice && initialProduct) setProduct(initialProduct); }, [open, notice, initialProduct]);
+  useEffect(() => { if (open) { form.current?.reset(); setPrepared(''); setCopyStatus(''); if (!notice && initialProduct) setProduct(initialProduct); } }, [open, notice, initialProduct]);
   useEffect(() => {
     const element = dialog.current;
     if (!element) return;
@@ -15,7 +18,7 @@ export default function OrderDialog({ open, onClose, notice, initialProduct }: P
     if (!open && element.open) element.close();
   }, [open]);
   const partnership = product === 'Distributor partnership';
-  const bulk = product === 'Event or corporate supply';
+  const bulk = ['Corporate supply','Event water supply'].includes(product);
   const informational = ['Quality report request','Bottled water availability','Dispenser service enquiry'].includes(product);
   return <dialog ref={dialog} className="order-dialog" onCancel={onClose} onClose={onClose} aria-labelledby={titleId} onClick={event => { if (event.target === event.currentTarget) onClose(); }}>
     <button className="close" aria-label="Close dialog" onClick={onClose}><X /></button>
@@ -23,21 +26,24 @@ export default function OrderDialog({ open, onClose, notice, initialProduct }: P
       <p className="form-eyebrow">PURE WATER. TRUSTED SERVICE.</p>
       <h2 id={titleId}>{partnership?'Let’s discuss a partnership':bulk?'Request a supply quote':informational?'Ask the PAAKS team':'Let’s arrange your water'}</h2>
       <p>Send an enquiry to PAAKS on WhatsApp. The team will confirm pricing, delivery availability and your order.</p>
-      <form onSubmit={event => {
+      <form ref={form} onSubmit={event => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
-        const message = `Hello PAAKS, I would like to make an enquiry.\nName: ${String(data.get('name')).trim()}\nEnquiry: ${product}\nQuantity: ${data.get('quantity') || 'To be discussed'}\nDelivery area: ${String(data.get('area') || 'Not supplied').trim()}\nBusiness: ${data.get('company') || 'Not supplied'}\nPreferred date: ${data.get('date') || 'To be confirmed'}\nSupply frequency: ${data.get('frequency') || 'Not supplied'}\nNotes: ${data.get('notes') || 'None'}`;
-        window.open(`https://wa.me/233244025199?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
+        for (const field of ['name','area','company']) { const input=event.currentTarget.elements.namedItem(field) as HTMLInputElement | null; if(input?.required && !input.value.trim()) { input.setCustomValidity('Please enter a value.'); input.reportValidity(); return; } } 
+        const message = `Hello PAAKS, I would like to make an enquiry.\nName: ${String(data.get('name')).trim()}\nEnquiry: ${product}\nQuantity: ${data.get('quantity') ? `${data.get('quantity')} ${product === '500ml sachet water (bags)' ? 'bags (30 × 500ml)' : product === '19L dispenser refill' ? '19L refills' : 'units; product in notes'}` : 'To be discussed'}\nDelivery area: ${String(data.get('area') || 'Not supplied').trim()}\nBusiness: ${data.get('company') || 'Not supplied'}\nPreferred date: ${data.get('date') || 'To be confirmed'}\nSupply frequency: ${data.get('frequency') || 'Not supplied'}\nNotes: ${data.get('notes') || 'None'}`;
+        setPrepared(message);
+        window.open(`https://wa.me/233596531880?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
       }}>
-        <label>Your name<input name="name" autoComplete="name" required maxLength={100} placeholder="Your full name" /></label>
-        <label>Enquiry type<select name="product" value={product} onChange={event => setProduct(event.target.value)}><option>19L dispenser refill</option><option>500ml sachet water (bags)</option><option>Event or corporate supply</option><option>Dispenser service enquiry</option><option>Distributor partnership</option><option>Quality report request</option><option>Bottled water availability</option></select></label>
-        {(partnership||bulk)&&<label>Business or organisation<input name="company" autoComplete="organization" required={partnership} maxLength={150} placeholder="Business / organisation name"/></label>}
-        <div className={!partnership&&!informational?'form-row':'form-row single'}>{!partnership&&!informational&&<label>Quantity<input name="quantity" type="number" min="1" max="10000" step="1" defaultValue="1" required /></label>}<label>{partnership?'Business location':informational?'Location (optional)':'Delivery area'}<input name="area" autoComplete="address-level2" placeholder="e.g. Tamale" required={!informational} maxLength={150}/></label></div>
-        {bulk&&<div className="form-row"><label>Preferred date<input name="date" type="date"/></label><label>Supply frequency<select name="frequency"><option>One-off / event</option><option>Weekly</option><option>Monthly</option><option>To be discussed</option></select></label></div>}
-        <label>{partnership?'Products, expected volume and business details':'Additional details'}<textarea name="notes" rows={2} maxLength={500} placeholder="Preferred date, landmark or delivery instructions"/></label>
+        <label>Your name<input name="name" onInput={event=>event.currentTarget.setCustomValidity('')} autoComplete="name" required maxLength={100} placeholder="Your full name" /></label>
+        <label>Enquiry type<select name="product" value={product} onChange={event => setProduct(event.target.value)}><option>19L dispenser refill</option><option>500ml sachet water (bags)</option><option>Corporate supply</option><option>Event water supply</option><option>Dispenser service enquiry</option><option>Distributor partnership</option><option>Quality report request</option><option>Bottled water availability</option></select></label>
+        {(partnership||bulk)&&<label>Business or organisation<input name="company" onInput={event=>event.currentTarget.setCustomValidity('')} autoComplete="organization" required={partnership} maxLength={150} placeholder="Business / organisation name"/></label>}
+        <div className={!partnership&&!informational?'form-row':'form-row single'}>{!partnership&&!informational&&<label>{product === '500ml sachet water (bags)' ? 'Number of bags (30 sachets each)' : product === '19L dispenser refill' ? 'Number of 19L refills' : 'Estimated quantity (units)'}<input name="quantity" type="number" min="1" max="10000" step="1" defaultValue="1" required /></label>}<label>{partnership?'Business location':informational?'Location (optional)':'Delivery area'}<input name="area" onInput={event=>event.currentTarget.setCustomValidity('')} autoComplete="address-level2" placeholder="e.g. Tamale" required={!informational} maxLength={150}/></label></div>
+        {bulk&&<div className="form-row"><label>Preferred date<input name="date" type="date" min={new Date().toISOString().slice(0,10)}/></label><label>Supply frequency<select name="frequency"><option>One-off / event</option><option>Weekly</option><option>Monthly</option><option>To be discussed</option></select></label></div>}
+        <label>{partnership?'Products, expected volume and business details':'Additional details'}<textarea name="notes" rows={2} maxLength={500} placeholder="Product needed, preferred date, landmark or delivery instructions"/></label>
         <button type="submit" className="primary"><MessageCircle size={18}/> CONTINUE TO WHATSAPP</button>
         <small>Opens WhatsApp with your enquiry. Your message is sent only when you choose to send it there.</small>
       </form>
+      {prepared&&<div className="enquiry-fallback"><p role="status">Your enquiry is prepared. Send it in WhatsApp to contact PAAKS.</p><a className="btn" href={`https://wa.me/233596531880?text=${encodeURIComponent(prepared)}`} target="_blank" rel="noopener noreferrer">Open WhatsApp</a><button className="btn secondary" type="button" onClick={async()=>{try{await navigator.clipboard.writeText(prepared);setCopyStatus('Enquiry copied.');}catch{setCopyStatus('Select and copy the enquiry below.');}}}>Copy enquiry</button><label>Prepared enquiry<textarea readOnly value={prepared} rows={5}/></label><small role="status">{copyStatus}</small></div>}
     </>}
   </dialog>;
 }
