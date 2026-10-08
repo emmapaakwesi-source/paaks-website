@@ -16,3 +16,6 @@ Hero: Use case product-mockup. Premium photographic-style illustrative product s
 Sachet: Use case product-mockup. Single sealed 500ml drinking-water sachet, upright frontal studio packaging mockup. Clear plastic edges and water inside; white label using the supplied official PAAKS logo; small 500ml text. Whole sachet visible, generous margins, square framing, pale ice-blue seamless background, grounded shadow. No jars, bottles, people, headlines or certifications.
 
 Dispenser: Use case product-mockup. Single 19-litre reusable clear-blue dispenser jar, upright frontal studio packaging mockup, filled with water and closed with a dark blue cap. White label with supplied official PAAKS logo, small 19L text. Whole jar and cap visible, generous margins, square framing, pale ice-blue background, grounded shadow. No sachets, bottles, people, headlines, claims or certification logos.
+
+
+Updated product mockups: dispenser-label-v2.webp uses supplied 19L label artwork with confirmed NS-072-7649 and no rejected tagline; sachet-bag-v2.webp shows a 30 × 500ml outer bag using supplied packaging artwork. Both generated images remain labelled as illustrations. Original concepts retained.
