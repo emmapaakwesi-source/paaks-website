@@ -18,12 +18,13 @@ Visit http://localhost:3000. Run `npm run build` to build and type-check. The bu
 - Responsive homepage, products, services, quality, service areas and resources.
 - Mobile navigation and keyboard-accessible dialogs.
 - WhatsApp enquiry form: prepares a message; customers send it in WhatsApp. Orders require team confirmation.
-- Original design image retained for future visual revisions.
+- Original design image retained, with extracted reference artwork used throughout the homepage.
+- Layout, colours, typography and section proportions revised to follow the supplied design.
 
 ## Before a public launch
 
 Confirm the telephone/WhatsApp number inherited from the reference: `0244 025 199`. It currently appears in `src/app/page.tsx` and `src/app/order-dialog.tsx`.
-Replace illustrative product artwork and logo with official assets. Supply the brand video, approved laboratory reports, verified testimonials, and finished articles. Confirm delivery coverage; expansion locations are enquiries only. Bottled products remain coming soon. No payment processing or backend order storage is implemented.
+Reference artwork has been extracted from the supplied design; replace it with original high-resolution assets when available. Supply the brand video, approved laboratory reports, verified testimonials, and finished articles. Confirm delivery coverage; expansion locations are enquiries only. Bottled products remain coming soon. No payment processing or backend order storage is implemented.
 
 ## GitHub
 
