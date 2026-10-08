@@ -15,3 +15,7 @@
 
 /* Keep the full labelled dispenser visible in the homepage hero. */
 .hero-visual>img{object-fit:contain;object-position:center;background:#dceffc}
+
+.factory-layout-card{margin:0;min-width:0;background:white;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:0 12px 35px #06245108}.factory-layout-heading{padding:25px 25px 5px}.factory-layout-heading h3{margin:15px 0 8px;font-size:23px}.factory-layout-image{display:block;padding:12px;min-height:44px}.factory-layout-image img{width:100%;height:auto;object-fit:contain}.factory-layout-card figcaption{border-top:1px solid var(--line);padding:18px 25px;background:#f8fbff}.factory-layout-card figcaption p{font-size:12px;line-height:1.6;margin:0 0 8px}.factory-layout-card .text-link{min-height:44px}.factory-layout-image:hover{background:#f8fbff}
+@media(max-width:850px){.tinted .quality-layout{grid-template-columns:1fr}.factory-layout-card{width:100%}.quality-copy{padding-top:0}}
+@media(max-width:650px){.factory-layout-heading{padding:20px 18px 5px}.factory-layout-heading h3{font-size:21px}.factory-layout-card figcaption{padding:15px 18px}.factory-layout-image{padding:6px}}
