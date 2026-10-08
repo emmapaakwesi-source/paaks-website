@@ -40,4 +40,4 @@ Source repository: https://github.com/emmapaakwesi-source/paaks-website
 `.openai/hosting.json` retains the existing private Sites project identity. Keep credentials outside the repository.
 
 
-Confirmed company information (8 October 2026): phones 0596 531 880 / 0204 760 043; GhanaPost GPS NS-072-7649; Choggu Yipala on Gurugu Road; paakspurifiedwater@outlook.com. WhatsApp uses the first number. Mission, vision and six values transcribed from supplied collateral; premises photograph supplied by PAAKS. Sachet bags contain 30 × 500ml. Do not use the tagline “Trust in every drop”. Current certification documents and precise factory map coordinates remain pending.
+Confirmed company information (8 October 2026): phones 0596 531 880 / 0204 760 043; GhanaPost GPS NS-072-7649; Choggu Yipala on Gurugu Road; sales@paakspurifiedwater.com. WhatsApp uses the first number. Mission, vision and six values transcribed from supplied collateral; premises photograph supplied by PAAKS. Sachet bags contain 30 × 500ml. Do not use the tagline “Trust in every drop”. Current certification documents and precise factory map coordinates remain pending.
