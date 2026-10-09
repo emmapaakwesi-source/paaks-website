@@ -30,7 +30,7 @@ export default function OrderDialog({ open, onClose, notice, initialProduct }: P
   return <dialog ref={dialog} className="order-dialog" onCancel={onClose} onClose={onClose} aria-labelledby={titleId} onClick={event => { const rect=event.currentTarget.getBoundingClientRect(); if(event.target===event.currentTarget && (event.clientX<rect.left || event.clientX>rect.right || event.clientY<rect.top || event.clientY>rect.bottom)) onClose(); }}>
     <button className="close" aria-label="Close dialog" onClick={onClose}><X /></button>
     {notice ? <><h2 id={titleId}>PAAKS information</h2><p>{notice}</p><button className="primary" onClick={onClose}>GOT IT</button></> : <>
-      <p className="form-eyebrow">PURE WATER. TRUSTED SERVICE.</p>
+      <p className="form-eyebrow">PURE. SAFE. TRUSTED.</p>
       <h2 id={titleId}>{partnership?'Let’s discuss a partnership':bulk?'Request a supply quote':informational?'Ask the PAAKS team':'Let’s arrange your water'}</h2>
       <p>Send an enquiry to PAAKS on WhatsApp. The team will confirm pricing, delivery availability and your order.</p>
       <form ref={form} onChange={clearPrepared} onSubmit={event => {
