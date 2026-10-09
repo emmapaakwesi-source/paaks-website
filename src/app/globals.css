@@ -43,3 +43,6 @@
 .certificate-logo{width:150px;flex:0 0 150px;min-height:70px;display:flex;align-items:center;justify-content:center;background:white}.certificate-logo img{display:block;width:100%;height:85px;object-fit:contain}@media(max-width:900px){.certificate-card{flex-direction:column}.certificate-logo{flex:0 0 auto;width:160px}}
 
 .packaging-flow{margin:40px 0}.packaging-flow-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin:24px 0}.packaging-flow .factory-layout-card{max-width:100%;width:100%}@media(max-width:650px){.packaging-flow-grid{grid-template-columns:1fr}}
+
+/* Circular footer logo presentation; official artwork remains intact. */
+.footer-logo{width:140px;height:140px;border-radius:50%;object-fit:contain;padding:12px;background:#fff}@media(max-width:650px){.footer-logo{width:110px;height:110px;padding:10px}}
