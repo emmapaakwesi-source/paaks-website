@@ -19,3 +19,5 @@ Dispenser: Use case product-mockup. Single 19-litre reusable clear-blue dispense
 
 
 Updated product mockups: dispenser-label-v2.webp uses supplied 19L label artwork with confirmed NS-072-7649 and no rejected tagline; sachet-bag-v2.webp shows a 30 × 500ml outer bag using supplied packaging artwork. Both generated images remain labelled as illustrations. Original concepts retained.
+
+Empty dispenser bottle: empty-dispenser-v1.webp and 600px variant, generated from supplied reference; uncapped, label removed and empty. Illustrative product mockup.
