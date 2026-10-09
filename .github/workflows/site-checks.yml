@@ -14,4 +14,7 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: node scripts/prune-export.mjs
+      - run: node scripts/secure-export.mjs
       - run: node scripts/check-export.mjs
+      - run: node scripts/check-security.mjs
+      - run: npm audit --audit-level=moderate
