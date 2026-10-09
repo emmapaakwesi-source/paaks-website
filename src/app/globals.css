@@ -46,3 +46,5 @@
 
 /* Circular footer logo presentation; official artwork remains intact. */
 .footer-logo{width:140px;height:140px;border-radius:50%;object-fit:contain;padding:12px;background:#fff}@media(max-width:650px){.footer-logo{width:110px;height:110px;padding:10px}}
+
+.product-cards{grid-template-columns:repeat(3,minmax(0,1fr))}.empty-bottle-visual{display:flex;align-items:center;justify-content:center;color:#0756db;background:linear-gradient(135deg,#edf7ff,#d8eafb)}.empty-bottle-visual>svg{max-width:45%;height:auto}@media(max-width:1000px){.product-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:650px){.product-cards{grid-template-columns:1fr}}
