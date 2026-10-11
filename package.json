@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "build:release": "node scripts/release.mjs",
+    "verify:release": "node scripts/release.mjs --verify-only"
   },
   "dependencies": {
     "next": "^15.5.0",

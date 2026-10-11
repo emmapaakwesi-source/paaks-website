@@ -1,43 +1,26 @@
 # PAAKS Purified Water website
 
-A responsive Next.js static website for PAAKS, based in Tamale. The homepage follows a clear brand and enquiry journey, with dedicated product, quality, delivery, corporate, distributor, FAQ and contact pages.
+Next.js static marketing website. Node.js 22 is used in CI.
 
-## Run locally
+## Development and release
 
-Requires Node.js 20 or newer.
+Run `npm ci`, then `npm run dev` for local development. Run `npm run build:release` for deployment: it builds, removes internal artifacts, adds CSP protection, checks all pages/assets and runs the dependency audit. Deploy only the hardened `out/` output. `npm run build` by itself is not a release build. `npm run verify:release` performs the same hardening/checks on an existing export. `npm run start` is not used for static exports.
 
-```bash
-npm ci
-npm run dev
-npm run build
-```
+## Current pages and features
 
-The build exports to `out/`; deploy that directory to a static host. `npm run start` is not used for static exports.
+Homepage; products; sachet, dispenser-refill and empty-bottle detail pages; quality; delivery and dispenser cleaning; corporate/event supply; distributors; referrals; about; FAQs; contact; privacy. Eight native disclosure cards explain the purification sequence. Planned 500ml/750ml bottled water is clearly labelled as a concept, not a currently orderable product.
 
-## Pages and functionality
+Enquiries are prepared in the browser and opened in WhatsApp; customers must send the message themselves. No enquiry database or payment processing is implemented. Corporate/event/delivery enquiries support sachets, refills, empty bottles and mixed supply. Cleaning enquiries collect equipment, machine count and location. Preferred dates use the visitor's local date and are checked again at submission.
 
-- `/`: spacious homepage with product imagery, purification overview, service journeys, story, city map, FAQs and distributor invitation.
-- `/products`, `/products/sachet`, `/products/dispenser`: product details and contextual enquiry buttons. Bottled products remain planned.
-- `/quality`: treatment process and a request for available reports.
-- `/delivery`: delivery enquiries, city map and dispenser services.
-- `/corporate`: workplace and event quotes.
-- `/distributors`: partnership enquiries.
-- `/about`, `/faq`, `/contact`: company information and help.
-- Shared WhatsApp enquiry dialog preselects the enquiry type. Corporate quotes collect business, date and frequency; distributor enquiries collect business details. Messages are sent only when customers send them in WhatsApp. There is no backend storage or payment processing.
-- City map loads Google Maps only when requested. It shows city locations, not the factory address. Expansion locations do not imply confirmed delivery coverage.
-- Responsive navigation, native accessible dialogs, keyboard skip link, FAQ disclosures, explicit image dimensions and lazy loading.
+Approved contacts: 0596 531 880 / 0204 760 043; sales@paakspurifiedwater.com; Choggu Yipala, Gurugu Road, Tamale; GhanaPost GPS NS-072-7649. WhatsApp uses the first number. Business map coordinates: 9.4391811, -0.861773. Tagline: PURE. SAFE. TRUSTED.
 
-## Brand assets
+Maps load after visitor action. Expansion city markers do not confirm delivery coverage. Certification documents are pending, customer logo permissions need confirmation, and the referral programme remains a proposed pilot. Product concept imagery is labelled illustrative.
 
-The official user-approved logo is preserved unchanged in `public/brand/paaks-official-logo.jpeg`; the header uses a display crop of that same artwork. Generated product mockups and their prompt briefs are in `public/imagery/`. They are labelled illustrative in the site. Replace them with real product photography later. The original design reference and older reference assets are retained for history.
+## Hosting and outstanding work
 
-## Before public launch
+The domain is connected to Sites. The current audience remains owner-private, and robots.txt blocks indexing. At an approved public launch, change access and indexing together and test both domain variants without signing in.
 
-Confirm the phone/WhatsApp number inherited from the design: `0244 025 199`, currently used in `site-content.tsx` and `order-dialog.tsx`. Supply factory coordinates, business email, opening hours, approved laboratory reports and verified testimonials. Confirm quantities per sachet bag, current pricing, bottle/exchange requirements, delivery terms and product packaging. Supply real photos and any brand video. The public domain and Squarespace DNS have not been connected.
+Application response headers require hosting-level verification/configuration; meta CSP cannot provide frame-ancestors. Browser, mobile, screen-reader and performance QA remain outstanding. Current export excludes the factory layout; historical repository copies have not been erased.
 
-Source repository: https://github.com/emmapaakwesi-source/paaks-website
-
-`.openai/hosting.json` retains the existing private Sites project identity. Keep credentials outside the repository.
-
-
-Confirmed company information (8 October 2026): phones 0596 531 880 / 0204 760 043; GhanaPost GPS NS-072-7649; Choggu Yipala on Gurugu Road; sales@paakspurifiedwater.com. WhatsApp uses the first number. Mission, vision and six values transcribed from supplied collateral; premises photograph supplied by PAAKS. Sachet bags contain 30 × 500ml. Do not use the tagline “Trust in every drop”. Current certification documents and precise factory map coordinates remain pending.
+Source mirror: https://github.com/emmapaakwesi-source/paaks-website
+`.openai/hosting.json` retains the Sites identity. Never commit credentials.

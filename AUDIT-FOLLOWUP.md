@@ -1,3 +1,23 @@
+# Current remediation status — 11 October 2026
+
+## Completed in this update
+- Added build:release and verify:release: sequential build/hardening/export/security/dependency checks with failure exit codes. CI uses the release command.
+- Preferred dates are calculated locally when the enquiry opens, with a fresh local-date check at submission; no build-time date minimum.
+- Corporate/event/delivery supply selectors and messages now support empty bottles and mixed quantities.
+- Referral fields are omitted from information-only and distributor enquiries; placeholder examples match enquiry types.
+- Homepage process introduction precedes a full-width four-column stage grid; two columns on mobile and one on very narrow screens.
+- Neutral Stage details labels remain accurate for open and closed disclosures.
+- Replaced obsolete README contacts, domain status and route documentation.
+
+## Still pending
+- Public audience and search indexing: deliberate private-development settings; requires public-launch instruction.
+- Actual FDA/GSA documents, laboratory reports, approved testimonials, customer-logo permissions and confirmed operating hours/terms: business inputs needed.
+- Hosting response headers including frame-ancestors: not configurable through the available static Sites source contract; verify on application responses when accessible.
+- Factory diagram historical copies: current deployment excludes them; history rewriting needs separate authorization and cannot retract downloaded copies.
+- Browser/device/screen-reader, live external review/social links and Core Web Vitals: supported browser QA unavailable in this environment. Source/export checks do not replace those tests.
+
+## Previous remediation record
+
 # Website audit and remediation — 9 October 2026
 
 ## Fixed in this pass
