@@ -65,3 +65,5 @@
 
 /* Give the process a full-width grid rather than a tall side column. */
 .tinted .quality-layout{grid-template-columns:1fr;gap:32px}.quality-layout .quality-copy>p:not(.eyebrow){max-width:760px}.quality-layout .quality-points{flex-direction:row;flex-wrap:wrap;gap:20px}.quality-layout .process-stage summary{min-height:190px}@media(max-width:650px){.quality-layout .purification-overview ol{grid-template-columns:repeat(2,minmax(0,1fr))}.quality-layout .quality-points{gap:14px}}@media(max-width:380px){.purification-overview ol,.quality-layout .purification-overview ol{grid-template-columns:1fr}.process-stage summary{min-height:160px}}
+
+.contact-email-group{margin:20px 0}.contact-email-group>span{display:block;font-size:13px;font-weight:700;color:var(--ink);margin-bottom:6px}.contact-email-group .contact-email{margin:0;overflow-wrap:anywhere}.sales-email-note{margin-top:24px;font-size:14px}.sales-email-note a{text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
