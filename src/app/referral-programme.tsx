@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from './static-link';
 import {ArrowUpRight,Gift,MessageCircle,Users} from 'lucide-react';
 const join='https://wa.me/233596531880?text='+encodeURIComponent('Hello PAAKS, I am interested in the proposed PAAKS Refer & Earn pilot. Please confirm whether registration is open and explain the proposed terms.\nMy name: \nMy town: ');
 const rewards=[

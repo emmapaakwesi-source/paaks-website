@@ -1,6 +1,6 @@
 'use client';
 import {createContext,useContext,useEffect,useState} from 'react';
-import Link from 'next/link';
+import Link from './static-link';
 import {usePathname} from 'next/navigation';
 import {ArrowRight,ArrowUpRight,Building2,CalendarDays,Check,ChevronDown,Droplets,FlaskConical,Gift,HeartHandshake,Instagram,Facebook,MapPin,Menu,MessageCircle,Phone,ShieldCheck,Star,Truck,Users,X} from 'lucide-react';
 import OrderDialog from './order-dialog';
