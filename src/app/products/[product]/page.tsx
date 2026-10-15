@@ -2,9 +2,9 @@ import type {Metadata} from 'next';
 import {notFound} from 'next/navigation';
 import {ProductPage} from '../../site-content';
 const products = {
-  sachet: {title:'500ml Sachet Water in Tamale',description:'Order PAAKS purified 500ml sachet water in bags of 30 for homes, shops, offices and events in Tamale. Ask about bulk quantities and delivery.',image:'sachet-bag-v2',width:1000,height:1200},
-  dispenser: {title:'19L Dispenser Water Delivery in Tamale',description:'Get PAAKS 19-litre purified dispenser water for homes and offices in Tamale. Enquire about refills, regular workplace supply and delivery availability.',image:'dispenser-label-v3',width:1200,height:1200},
-  'empty-bottle': {title:'Empty 19L Water Dispenser Bottles',description:'Enquire about empty 19L water dispenser bottles from PAAKS in Tamale, including stock, compatibility, pricing and delivery. Water refills sold separately.',image:'empty-dispenser-v1',width:1186,height:1326},
+  sachet: {title:'500ml Sachet Water',description:'PAAKS 500ml sachet water, supplied in bags of 30. Enquire about quantities and delivery in Tamale.',image:'sachet-bag-v2',width:1200,height:1200},
+  dispenser: {title:'19L Dispenser Water',description:'PAAKS 19L dispenser water for homes and workplaces. Ask about refills and regular supply.',image:'dispenser-label-v3',width:1200,height:1200},
+  'empty-bottle': {title:'Empty 19L Dispenser Bottles',description:'Buy empty 19L dispenser bottles from PAAKS. Enquire about stock, pricing, delivery and compatibility. Water refills are sold separately.',image:'empty-dispenser-v1',width:1186,height:1326},
 };
 export const dynamicParams=false;
 export function generateStaticParams(){return Object.keys(products).map(product=>({product}))}
